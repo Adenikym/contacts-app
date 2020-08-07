@@ -11,7 +11,7 @@
         <ul>
             <li><button class="lg">Lg</button></li>
             <li><button>Sr</button></li>
-            <li><button>+</button></li>
+            <li id="add"><button>+</button></li>
             <li><button>-</button></li>
             <li><button></button></li>
         </ul>
@@ -20,23 +20,7 @@
 <div class="rest">
     <main>
         <h1>Contacts</h1>
-        <div class="search">
-            <form id="contactform" >
-                <div class="name">
-                <label  for="new" class="add">Name </label>
-                <input id="name" name="new" type="text">
-            </div>
-            <div class="number">
-                <label for="new" class="add">Number</label>
-                <input id="num" name="new" type="number">
-            </div>
-            <div class="mail">
-                <label for="new" class="add">Email </label>
-                <input id="mail" name="new" type="email">
-            </div>
-                <input class="sub" type="submit" value="Save">
-            </form>
-        </div>
+       
 
         
 
@@ -47,7 +31,28 @@
             </p>
         </div>
     </div>
+<div class="bg-modal">
+    <div class="search">
 
+        <form id="contactform" >
+
+            <button class="close">close</button>
+            <div class="name">
+            <label  for="new" class="add">Name </label>
+            <input id="name" name="new" type="text">
+        </div>
+        <div class="number">
+            <label for="new" class="add">Number</label>
+            <input id="num" name="new" type="number">
+        </div>
+        <div class="mail">
+            <label for="new" class="add">Email </label>
+            <input id="mail" name="new" type="email">
+        </div>
+            <input class="sub" type="submit" value="Save">
+        </form>
+    </div>
+</div>
            
     
     </main>

@@ -1,3 +1,17 @@
+function addContact() {
+    const add= document.getElementById("add");
+    add.addEventListener("click", function() {
+        document.querySelector('.bg-modal').style.display="block";
+    })
+
+}
+
+addContact();
+
+document.querySelector(".close").addEventListener("click", function() {
+    document.querySelector(".bg-modal").style.display="none";
+})
+
 const form= document.getElementById("contactform");
 form.addEventListener("submit",saveContact)
 
@@ -37,6 +51,8 @@ e.preventDefault();
 }
 
 function deleteContact (contactname) {
+    console.log('rec');
+
     var contact= JSON.parse(localStorage.getItem("contact"));
 
     for(let i=0; i<contact.length; i++){
@@ -48,7 +64,7 @@ function deleteContact (contactname) {
 }
 
 function displayContacts() {
-
+    
     var contact= JSON.parse(localStorage.getItem("contact"));
     console.log(contact);
     const saved= document.getElementById("receive");
@@ -64,7 +80,7 @@ function displayContacts() {
                              " </h3>"+
                              "<p>"+number+"</p>"+
                              "<p class='mi'>"+mail+"</p>"+
-                             "<button onclick='deleteContact(\''+contactname+'\')' class='del'>"+Deletecontact+"</button>"
+                             "<button onclick='deleteContact(`"+name+"`)' class='del'>"+Deletecontact+"</button>"
                              " </div>";
    }
 }
