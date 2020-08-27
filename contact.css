@@ -193,5 +193,7 @@ ul button{
 }
 
 #edit-form{
-   color: white;
+   color: lightblue;
+   display: none;
 }
+   

@@ -65,17 +65,24 @@ function deleteContact (contactname) {
 
 function editContact (contactname) {
 
+    document.getElementById("edit-form").style.display="block"
+
     var contact= JSON.parse(localStorage.getItem("contact"));
 
+    
+
     for (let i=0; i<contact.length; i++) {
-    document.getElementById("name1").value= contact[i].contactname;
+    if (contact[i].contactname== contactname) {
+        document.getElementById("name1").value= contact[i].contactname;
     document.getElementById("num1").value=contact[i].phonenumber;
     document.getElementById("mail1").value=contact[i].Email;
     }
+    }
 
-  document.getElementById("subedit").addEventListener("submit",function (contactname) 
+  document.getElementById("subedit").addEventListener("click",function (event) 
   
   {
+
     var econtact = {
         contactname:document.getElementById("name1").value,
         phonenumber:  document.getElementById("num1").value,
@@ -87,14 +94,21 @@ function editContact (contactname) {
 
        for(let i=0; i<contact.length; i++){
         if (contact[i].contactname===contactname){
-            contact.splice(i,1[econtact]);
+            contact.splice(i,1 ,econtact);
+
         }}
-  })
+
+        localStorage.setItem("contact", JSON.stringify(contact)); 
+
+ event.preventDefault();
+
+ document.getElementById("edit-form").style.display="none"}
+  
+  )
 
    
 
-  localStorage.setItem("contact", JSON.stringify(contact)); 
-
+ 
 }
 
 function displayContacts() {
